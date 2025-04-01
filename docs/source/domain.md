@@ -1,5 +1,3 @@
-## 🏗 **3. `domain.md` (Domain Layer)**
-```md
 # Domain Layer
 
 This layer contains the **entities** and **business rules**.

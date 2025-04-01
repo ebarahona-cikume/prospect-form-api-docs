@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>🏗 3. domain.md (Domain Layer) &#8212; prospect-form-api-docs 0.0.1 documentation</title>
+    <title>Domain Layer &#8212; prospect-form-api-docs 0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -31,32 +31,33 @@
 
           <div class="body" role="main">
             
-  <section id="domain-md-domain-layer">
-<h1>🏗 <strong>3. <code class="docutils literal notranslate"><span class="pre">domain.md</span></code> (Domain Layer)</strong><a class="headerlink" href="#domain-md-domain-layer" title="Link to this heading">¶</a></h1>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Domain Layer</span>
+  <section id="domain-layer">
+<h1>Domain Layer<a class="headerlink" href="#domain-layer" title="Link to this heading">¶</a></h1>
+<p>This layer contains the <strong>entities</strong> and <strong>business rules</strong>.</p>
+<section id="key-components">
+<h2>📌 Key Components<a class="headerlink" href="#key-components" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Entities</strong>: Represent the core domain.</p></li>
+<li><p><strong>Value Objects</strong>: Immutable objects with specific rules.</p></li>
+</ul>
+</section>
+<section id="example-of-an-entity">
+<h2>🔧 Example of an Entity<a class="headerlink" href="#example-of-an-entity" title="Link to this heading">¶</a></h2>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[Table(&quot;form_design&quot;, Schema = &quot;frm&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">FormDesignModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">BaseModel</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[Column(&quot;ID&quot;)]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">Guid</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-This layer contains the <span class="gs">**entities**</span> and <span class="gs">**business rules**</span>.
+<span class="w">    </span><span class="na">[Column(&quot;name&quot;)]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="n">required</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
-<span class="gu">## 📌 Key Components</span>
-<span class="k">-</span><span class="w"> </span><span class="gs">**Entities**</span>: Represent the core domain.
-<span class="k">-</span><span class="w"> </span><span class="gs">**Value Objects**</span>: Immutable objects with specific rules.
-
-<span class="gu">## 🔧 Example of an Entity</span>
-```csharp
-[Table(&quot;form_design&quot;, Schema = &quot;frm&quot;)]
-public class FormDesignModel : BaseModel
-{
-    [Column(&quot;ID&quot;)]
-    public Guid Id { get; set; }
-
-    [Column(&quot;name&quot;)]
-    public required string Name { get; set; }
-
-    [Column(&quot;description&quot;)]
-    public string? Description { get; set; }
-}
+<span class="w">    </span><span class="na">[Column(&quot;description&quot;)]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">string?</span><span class="w"> </span><span class="n">Description</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 

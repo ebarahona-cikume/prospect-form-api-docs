@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>🛠 4. infrastructure.md (Infrastructure Layer) &#8212; prospect-form-api-docs 0.0.1 documentation</title>
+    <title>Infrastructure Layer &#8212; prospect-form-api-docs 0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -31,34 +31,35 @@
 
           <div class="body" role="main">
             
-  <section id="infrastructure-md-infrastructure-layer">
-<h1>🛠 <strong>4. <code class="docutils literal notranslate"><span class="pre">infrastructure.md</span></code> (Infrastructure Layer)</strong><a class="headerlink" href="#infrastructure-md-infrastructure-layer" title="Link to this heading">¶</a></h1>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Infrastructure Layer</span>
-
-This layer implements <span class="gs">**repositories**</span>, <span class="gs">**external services**</span>, and <span class="gs">**data persistence**</span>.
-
-<span class="gu">## 📌 Key Components</span>
-<span class="k">-</span><span class="w"> </span><span class="gs">**Repositories**</span>: Implement the contracts defined in <span class="sb">`Domain`</span>.
-<span class="k">-</span><span class="w"> </span><span class="gs">**Persistence**</span>: Database configuration.
-
-<span class="gu">## 🔧 Example of a Repository</span>
-```csharp
-public class FormDesignRepository() : IFormDesignRepository
-{
-    public async Task&lt;FormDesignModel?&gt; FindFirstAsync(TenantDbContext context)
-    {
-        try
-        {
-            return await context.FormDesign.FirstOrDefaultAsync();
-        }
-        catch (Exception ex)
-        {
-            throw new InvalidOperationException(&quot;Error retrieving form design: &quot;, ex);
-        }
-    }
-}
+  <section id="infrastructure-layer">
+<h1>Infrastructure Layer<a class="headerlink" href="#infrastructure-layer" title="Link to this heading">¶</a></h1>
+<p>This layer implements <strong>repositories</strong>, <strong>external services</strong>, and <strong>data persistence</strong>.</p>
+<section id="key-components">
+<h2>📌 Key Components<a class="headerlink" href="#key-components" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Repositories</strong>: Implement the contracts defined in <code class="docutils literal notranslate"><span class="pre">Domain</span></code>.</p></li>
+<li><p><strong>Persistence</strong>: Database configuration.</p></li>
+</ul>
+</section>
+<section id="example-of-a-repository">
+<h2>🔧 Example of a Repository<a class="headerlink" href="#example-of-a-repository" title="Link to this heading">¶</a></h2>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nf">FormDesignRepository</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">IFormDesignRepository</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">FormDesignModel</span><span class="o">?&gt;</span><span class="w"> </span><span class="n">FindFirstAsync</span><span class="p">(</span><span class="n">TenantDbContext</span><span class="w"> </span><span class="n">context</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">FormDesign</span><span class="p">.</span><span class="n">FirstOrDefaultAsync</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">InvalidOperationException</span><span class="p">(</span><span class="s">&quot;Error retrieving form design: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ex</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>🎭 5. presentation.md (Capa de Presentación) &#8212; prospect-form-api-docs 0.0.1 documentation</title>
+    <title>Presentation Layer &#8212; prospect-form-api-docs 0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -31,38 +31,39 @@
 
           <div class="body" role="main">
             
-  <section id="presentation-md-capa-de-presentacion">
-<h1>🎭 <strong>5. <code class="docutils literal notranslate"><span class="pre">presentation.md</span></code> (Capa de Presentación)</strong><a class="headerlink" href="#presentation-md-capa-de-presentacion" title="Link to this heading">¶</a></h1>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Capa de Presentación</span>
+  <section id="presentation-layer">
+<h1>Presentation Layer<a class="headerlink" href="#presentation-layer" title="Link to this heading">¶</a></h1>
+<p>The <strong>Presentation Layer</strong> defines the controllers and APIs.</p>
+<section id="key-components">
+<h2>📌 Key Components<a class="headerlink" href="#key-components" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Controllers</strong>: Expose the endpoints.</p></li>
+<li><p><strong>Middlewares</strong>: Handle authentication and validations.</p></li>
+</ul>
+</section>
+<section id="example-of-an-api-endpoint">
+<h2>🔧 Example of an API Endpoint<a class="headerlink" href="#example-of-an-api-endpoint" title="Link to this heading">¶</a></h2>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[ApiController]</span>
+<span class="na">[Route(&quot;api/[controller]</span><span class="s">&quot;)]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">UsersController</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ControllerBase</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">readonly</span><span class="w"> </span><span class="n">CreateUserUseCase</span><span class="w"> </span><span class="n">_createUserUseCase</span><span class="p">;</span>
 
-La capa <span class="gs">**Presentation**</span> define los controladores y APIs.
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nf">UsersController</span><span class="p">(</span><span class="n">CreateUserUseCase</span><span class="w"> </span><span class="n">createUserUseCase</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">_createUserUseCase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createUserUseCase</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="gu">## 📌 Principales Componentes</span>
-<span class="k">-</span><span class="w"> </span><span class="gs">**Controllers**</span>: Exponen los endpoints.
-<span class="k">-</span><span class="w"> </span><span class="gs">**Middlewares**</span>: Gestionan autenticación y validaciones.
-
-<span class="gu">## 🔧 Ejemplo de un Endpoint</span>
-```csharp
-[ApiController]
-[Route(&quot;api/[controller]&quot;)]
-public class UsersController : ControllerBase
-{
-    private readonly CreateUserUseCase _createUserUseCase;
-
-    public UsersController(CreateUserUseCase createUserUseCase)
-    {
-        _createUserUseCase = createUserUseCase;
-    }
-
-    [HttpPost]
-    public async Task&lt;IActionResult&gt; Create([FromBody] CreateUserDto user)
-    {
-        await _createUserUseCase.Execute(user);
-        return Ok();
-    }
-}
+<span class="w">    </span><span class="na">[HttpPost]</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="n">Task</span><span class="o">&lt;</span><span class="n">IActionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Create</span><span class="p">([</span><span class="n">FromBody</span><span class="p">]</span><span class="w"> </span><span class="n">CreateUserDto</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="n">_createUserUseCase</span><span class="p">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">user</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">Ok</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
+</section>
 </section>
 
 

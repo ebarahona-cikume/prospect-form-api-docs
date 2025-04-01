@@ -1,5 +1,3 @@
-## 🛠 **4. `infrastructure.md` (Infrastructure Layer)**
-```md
 # Infrastructure Layer
 
 This layer implements **repositories**, **external services**, and **data persistence**.

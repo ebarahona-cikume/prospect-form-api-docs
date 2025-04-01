@@ -1,15 +1,12 @@
+# Presentation Layer
 
-### 🎭 **5. `presentation.md` (Capa de Presentación)**
-```md
-# Capa de Presentación
+The **Presentation Layer** defines the controllers and APIs.
 
-La capa **Presentation** define los controladores y APIs.
+## 📌 Key Components
+- **Controllers**: Expose the endpoints.
+- **Middlewares**: Handle authentication and validations.
 
-## 📌 Principales Componentes
-- **Controllers**: Exponen los endpoints.
-- **Middlewares**: Gestionan autenticación y validaciones.
-
-## 🔧 Ejemplo de un Endpoint
+## 🔧 Example of an API Endpoint
 ```csharp
 [ApiController]
 [Route("api/[controller]")]
