@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Documentation &#8212; prospect-form-api-docs 0.0.1 documentation</title>
+    <title>🏗 3. domain.md (Domain Layer) &#8212; prospect-form-api-docs 0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -31,18 +31,32 @@
 
           <div class="body" role="main">
             
-  <section id="project-documentation">
-<h1>Project Documentation<a class="headerlink" href="#project-documentation" title="Link to this heading">¶</a></h1>
-<p>Welcome to the documentation of <code class="docutils literal notranslate"><span class="pre">prospect-form-api</span></code>, an application built with <strong>C#</strong> and <strong>.NET 8.0</strong> whose main purpose is to generate a personalized form for different clients and store the responses that said form receives.</p>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="application.html"><span class="std std-doc">Application</span></a></p></li>
-<li><p><a class="reference internal" href="domain.html"><span class="std std-doc">Domain</span></a></p></li>
-<li><p><a class="reference internal" href="infrastructure.html"><span class="std std-doc">Infrastructure</span></a></p></li>
-<li><p><a class="reference internal" href="presentation.html"><span class="std std-doc">Presentation</span></a></p></li>
-</ul>
-</section>
+  <section id="domain-md-domain-layer">
+<h1>🏗 <strong>3. <code class="docutils literal notranslate"><span class="pre">domain.md</span></code> (Domain Layer)</strong><a class="headerlink" href="#domain-md-domain-layer" title="Link to this heading">¶</a></h1>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span><span class="gh"># Domain Layer</span>
+
+This layer contains the <span class="gs">**entities**</span> and <span class="gs">**business rules**</span>.
+
+<span class="gu">## 📌 Key Components</span>
+<span class="k">-</span><span class="w"> </span><span class="gs">**Entities**</span>: Represent the core domain.
+<span class="k">-</span><span class="w"> </span><span class="gs">**Value Objects**</span>: Immutable objects with specific rules.
+
+<span class="gu">## 🔧 Example of an Entity</span>
+```csharp
+[Table(&quot;form_design&quot;, Schema = &quot;frm&quot;)]
+public class FormDesignModel : BaseModel
+{
+    [Column(&quot;ID&quot;)]
+    public Guid Id { get; set; }
+
+    [Column(&quot;name&quot;)]
+    public required string Name { get; set; }
+
+    [Column(&quot;description&quot;)]
+    public string? Description { get; set; }
+}
+</pre></div>
+</div>
 </section>
 
 
@@ -52,7 +66,7 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">prospect-form-api-docs</a></h1>
+<h1 class="logo"><a href="index.html">prospect-form-api-docs</a></h1>
 
 
 
@@ -75,7 +89,7 @@
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
+  <li><a href="index.html">Documentation overview</a><ul>
   </ul></li>
 </ul>
 </div>
@@ -99,7 +113,7 @@
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |
-      <a href="_sources/index.md.txt"
+      <a href="_sources/domain.md.txt"
           rel="nofollow">Page source</a>
     </div>
 

@@ -1,13 +1,9 @@
-# Documentación de mi API
+# Project Documentation
 
-Bienvenido a la documentación de mi API escrita en **Markdown** con Sphinx.
+Welcome to the documentation of `prospect-form-api`, an application built with **C#** and **.NET 8.0** whose main purpose is to generate a personalized form for different clients and store the responses that said form receives.
 
-## Introducción
-
-Puedes escribir documentación en formato Markdown en lugar de reStructuredText.
-
-## Sección de Ejemplo
-
-- Lista 1
-- Lista 2
-- Lista 3
+## Table of Contents
+- [Application](application.md)
+- [Domain](domain.md)
+- [Infrastructure](infrastructure.md)
+- [Presentation](presentation.md)
