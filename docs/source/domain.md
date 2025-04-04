@@ -6,7 +6,7 @@ Contains the enterprise-wide business rules. This layer is the most stable and c
 
 ## 🔧 Example of an Entity
 ```csharp
-[Table("form_design", Schema = "frm")]
+[Table("form", Schema = "dbo")]
 public class FormDesignModel : BaseModel
 {
     [Column("ID")]
