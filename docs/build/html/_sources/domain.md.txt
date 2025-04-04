@@ -1,10 +1,8 @@
 # Domain Layer
-
-This layer contains the **entities** and **business rules**.
+Contains the enterprise-wide business rules. This layer is the most stable and contains the **models** that map the **entities** that we are using throught the project.
 
 ## 📌 Key Components
-- **Entities**: Represent the core domain.
-- **Value Objects**: Immutable objects with specific rules.
+- **Models**: Represent the core domain.
 
 ## 🔧 Example of an Entity
 ```csharp

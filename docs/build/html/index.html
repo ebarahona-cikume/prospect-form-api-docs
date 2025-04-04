@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project Documentation &#8212; prospect-form-api-docs 0.0.1 documentation</title>
+    <title>Prospect Form Generator API &#8212; prospect-form-api-docs 0.0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
@@ -31,17 +31,39 @@
 
           <div class="body" role="main">
             
-  <section id="project-documentation">
-<h1>Project Documentation<a class="headerlink" href="#project-documentation" title="Link to this heading">¶</a></h1>
-<p>Welcome to the documentation of <code class="docutils literal notranslate"><span class="pre">prospect-form-api</span></code>, an application built with <strong>C#</strong> and <strong>.NET 8.0</strong> whose main purpose is to generate a personalized form for different clients and store the responses that said form receives.</p>
-<section id="table-of-contents">
-<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">¶</a></h2>
+  <section id="prospect-form-generator-api">
+<h1>Prospect Form Generator API<a class="headerlink" href="#prospect-form-generator-api" title="Link to this heading">¶</a></h1>
+<p>Welcome to the documentation of <strong>Prospect Form Generator Api</strong>, an application built with <strong>C#</strong> and <strong>.NET 8.0</strong> whose main purpose is to generate a personalized form for different clients and store the responses that said form receives.</p>
+<section id="overview">
+<h2>📖 Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p><strong>Prospect Form Generator API</strong> is a modular and scalable solution designed to dynamically generate custom forms for different clients and store their responses securely.</p>
+<p>This API follows the principles of <strong>Clean Architecture</strong>, ensuring a clean separation of concerns and maintainability over time. It supports a <strong>multi-database architecture</strong>, where each client has its own isolated database. Form generation is dynamic and customizable per client, and it is easily embeddable into third-party websites through a generated JavaScript script.</p>
+<p>The project includes:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="application.html"><span class="std std-doc">Application</span></a></p></li>
-<li><p><a class="reference internal" href="domain.html"><span class="std std-doc">Domain</span></a></p></li>
-<li><p><a class="reference internal" href="infrastructure.html"><span class="std std-doc">Infrastructure</span></a></p></li>
-<li><p><a class="reference internal" href="presentation.html"><span class="std std-doc">Presentation</span></a></p></li>
+<li><p>Custom field rendering based on form design stored per client.</p></li>
+<li><p>Dynamic loading of <code class="docutils literal notranslate"><span class="pre">select</span></code> options using stored procedures.</p></li>
+<li><p>A secure and decoupled database access strategy using Azure Key Vault for credential management.</p></li>
+<li><p>A robust error handling mechanism via custom middleware.</p></li>
+<li><p>Unit testing to ensure business logic correctness.</p></li>
+<li><p>Docker support for easy deployment and environment setup.</p></li>
 </ul>
+</section>
+<section id="project-structure">
+<h2>🧱 Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading">¶</a></h2>
+<p>This project follows the principles of <strong>Clean Architecture</strong>, ensuring separation of concerns, scalability, and testability.</p>
+<section id="layer-responsibilities">
+<h3>Layer Responsibilities<a class="headerlink" href="#layer-responsibilities" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong><a class="reference internal" href="domain.html"><span class="std std-doc">Domain</span></a></strong><br />
+Contains the enterprise-wide business rules. This layer is the most stable and contains entities, value objects, and business logic.</p></li>
+<li><p><strong><a class="reference internal" href="application.html"><span class="std std-doc">Application</span></a></strong>
+Contains the use cases and interfaces. It orchestrates domain logic without knowing how things are persisted or presented.</p></li>
+<li><p><strong><a class="reference internal" href="infrastructure.html"><span class="std std-doc">Infrastructure</span></a></strong>
+It contains the contexts that handle the database access and the repositories to handle database operations.</p></li>
+<li><p><strong><a class="reference internal" href="presentation.html"><span class="std std-doc">Presentation</span></a></strong>
+The entry point of the application, exposing the API. It communicates with the Application layer through use cases.</p></li>
+</ul>
+</section>
 </section>
 </section>
 

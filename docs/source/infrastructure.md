@@ -1,10 +1,9 @@
 # Infrastructure Layer
-
-This layer implements **repositories**, **external services**, and **data persistence**.
+It contains the contexts that handle the database access and the repositories to handle database operations.
 
 ## 📌 Key Components
-- **Repositories**: Implement the contracts defined in `Domain`.
-- **Persistence**: Database configuration.
+- **DbContexts**: Handle the connection to databases.
+- **Repositories**: Implement databases operations, like creating, reading and updating objects.
 
 ## 🔧 Example of a Repository
 ```csharp

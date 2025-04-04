@@ -33,12 +33,12 @@
             
   <section id="infrastructure-layer">
 <h1>Infrastructure Layer<a class="headerlink" href="#infrastructure-layer" title="Link to this heading">¶</a></h1>
-<p>This layer implements <strong>repositories</strong>, <strong>external services</strong>, and <strong>data persistence</strong>.</p>
+<p>It contains the contexts that handle the database access and the repositories to handle database operations.</p>
 <section id="key-components">
 <h2>📌 Key Components<a class="headerlink" href="#key-components" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Repositories</strong>: Implement the contracts defined in <code class="docutils literal notranslate"><span class="pre">Domain</span></code>.</p></li>
-<li><p><strong>Persistence</strong>: Database configuration.</p></li>
+<li><p><strong>DbContexts</strong>: Handle the connection to databases.</p></li>
+<li><p><strong>Repositories</strong>: Implement databases operations, like creating, reading and updating objects.</p></li>
 </ul>
 </section>
 <section id="example-of-a-repository">
